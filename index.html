@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Created By KinG -->
+  <title>Digimon Recruitment Table</title>
+  <!-- Fonte pixel Silkscreen -->
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet" />
+
+  <!-- ===== Configuração de imagens ===== -->
+  <script>
+    const digimonImages = {
+      "Shoutmon": "https://cosplayfu-website.s3.amazonaws.com/_Upload/b/62490-Shoutmon-Cosplay-from-Digimon-Fusion.jpg",
+      "Ballistamon": "https://i.imgur.com/2XE1v2v.png",
+      "Dorulumon": "https://i.imgur.com/OFK67g9.png",
+      "Vademon": "https://i.imgur.com/cp6Q3Sx.png",
+      "Seadramon": "https://i.imgur.com/g0V2nCx.png",
+      "MarineAngemon": "https://i.imgur.com/pFnM9P5.png",
+      "WereGarurumon": "https://i.imgur.com/QeUhBPx.png",
+      "BanchoMamemon": "https://i.imgur.com/HPeUZ5o.png",
+      "BanchoLilymon": "https://i.imgur.com/sv4f8l4.png",
+      "BanchoStingmon": "https://i.imgur.com/LVYxVu3.png",
+      "Kabuterimon": "https://i.imgur.com/wbPUGUX.jpeg",
+      "Kuwagamon": "https://i.imgur.com/MIbBVUi.png",
+      "Pulsemon": "https://i.imgur.com/wzzJ0KK.png",
+      "Pistmon": "https://i.imgur.com/6Q5xtAB.png",
+      "Omegamon X": "https://i.imgur.com/hYPm22z.png",
+      "Devitamamon": "https://i.imgur.com/0KPcVz5.png",
+      "Palmon": "https://i.imgur.com/Tbx0Hkc.png",
+      "Veggimon": "https://i.imgur.com/r4PdEpm.png",
+      "Numemon": "https://i.imgur.com/V8D7c83.png",
+      "Lilamon": "https://i.imgur.com/Gi3eOGk.png",
+      "Garurumon": "https://i.imgur.com/OkCnYMW.png",
+      "Yukidarumon": "https://i.imgur.com/0a5qSbv.png",
+      "Tyranomon": "https://i.imgur.com/UthqkHY.png",
+      "Meramon": "https://i.imgur.com/xUswb3s.jpeg",
+      "Digitamamon": "https://i.imgur.com/aYmMQi7.png"
+    };
+  </script>
+
+  <style>
+    body {
+      background: #06162d url("https://i.imgur.com/mPie5WG.png") no-repeat center top fixed;
+      background-size: cover;
+      font-family: 'Silkscreen', sans-serif;
+      color: #fff;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1000px;
+      background: rgba(10, 30, 58, 0.88);
+      border: 3px solid #00c8ff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00c8ff;
+      overflow: visible;
+    }
+    th {
+      background: #004080;
+      color: #ffdf4d;
+      padding: 12px;
+      text-transform: uppercase;
+      font-size: 14px;
+      border-bottom: 3px solid #00c8ff;
+    }
+    td {
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+      transition: background 0.3s ease;
+      vertical-align: middle;
+    }
+    tr:nth-child(even) td { background: rgba(255, 255, 255, 0.05); }
+    tr:hover td { background: rgba(0, 200, 255, 0.1); }
+
+    td:last-child {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-align: left;
+    }
+
+    .recruitment { font-weight: bold; }
+    td:nth-child(2) { color: #ffdf4d; font-weight: bold; }
+
+    .tooltip {
+      position: relative;
+      cursor: pointer;
+      color: #ffdf4d;
+      font-weight: bold;
+    }
+    .tooltip img {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 120px;
+      border: 2px solid #00c8ff;
+      border-radius: 8px;
+      background: #000;
+      padding: 4px;
+      z-index: 10;
+      pointer-events: none;
+      opacity: 0;
+      transform: scale(0.85);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .tooltip:hover img { opacity: 1; transform: scale(1); }
+
+    .badge {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      border-radius: 4px;
+      font-size: 14px;
+      flex-shrink: 0;
+      transition: box-shadow 0.3s ease;
+    }
+    .badge:hover { box-shadow: 0 0 10px #fff, 0 0 20px currentColor, 0 0 30px currentColor; }
+
+    .R { background-color: #28a745; }
+    .C { background-color: #ffa500; }
+    .U { background-color: #007bff; }
+    .M { background-color: #dc3545; }
+    .A { background-color: #6c757d; }
+
+    @media (max-width: 720px) {
+      th, td { font-size: 12px; padding: 8px; }
+      .badge { width: 30px; height: 30px; line-height: 30px; font-size: 12px; }
+      .tooltip img { width: 100px; }
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Recruitments</th>
+        <th>Digimon</th>
+        <th>Location</th>
+        <th>Requisites</th>
+        <th>Evolution Stage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="recruitment">Jogress</td><td><span class="tooltip" data-digimon="Shoutmon">Shoutmon<img alt="Shoutmon"></span></td><td>Virus Busters</td><td>None</td><td><span class="badge A">A</span>Any</td></tr>
+      <tr><td class="recruitment">Jogress</td><td><span class="tooltip" data-digimon="Ballistamon">Ballistamon<img alt="Ballistamon"></span></td><td>Metal Empire</td><td>Recruit Shoutmon</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td class="recruitment">Jogress</td><td><span class="tooltip" data-digimon="Dorulumon">Dorulumon<img alt="Dorulumon"></span></td><td>Nature Spirits</td><td>Recruit Ballistamon</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Vademon">Vademon<img alt="Vademon"></span></td><td>Deep Savers</td><td>None”</td><td><span class="badge U">U</span>Ultimate</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Seadramon">Seadramon<img alt="Seadramon"></span></td><td>Deep Savers</td><td>None</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="MarineAngemon">MarineAngemon<img alt="MarineAngemon"></span></td><td>Deep Savers</td><td>Recruit Seadramon</td><td><span class="badge U">U</span>Ultimate</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="WereGarurumon">WereGarurumon<img alt="WereGarurumon"></span></td><td>Virus Busters</td><td>None</td><td><span class="badge U">U</span>Ultimate</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="BanchoMamemon">BanchoMamemon<img alt="BanchoMamemon"></span></td><td>Metal Empire</td><td>None</td><td><span class="badge M">M</span>Mega</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="BanchoLilymon">BanchoLilymon<img alt="BanchoLilymon"></span></td><td>Nature Spirits</td><td>Recruit BanchoMamemon</td><td><span class="badge M">M</span>Mega</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="BanchoStingmon">BanchoStingmon<img alt="BanchoStingmon"></span></td><td>Nature Spirits</td><td>Recruit BanchoMamemon</td><td><span class="badge M">M</span>Mega</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Kabuterimon">Kabuterimon<img alt="Kabuterimon"></span></td><td>Nature Spirits</td><td>50+ trainings, 85%+ discipline</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Kuwagamon">Kuwagamon<img alt="Kuwagamon"></span></td><td>Nature Spirits</td><td>Recruit Kabuterimon</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Pulsemon">Pulsemon<img alt="Pulsemon"></span></td><td>Virus Busters</td><td>90+ Speed</td><td><span class="badge R">R</span>Rookie</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Pistmon">Pistmon<img alt="Pistmon"></span></td><td>Virus Busters</td><td>Recruit Pulsemon</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Omegamon X">Omegamon X<img alt="Omegamon X"></span></td><td>Virus Busters</td><td>None</td><td><span class="badge M">M</span>Mega</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Devitamamon">Devitamamon<img alt="Devitamamon"></span></td><td>Nightmare Soldiers</td><td>+1 Generation Digimon</td><td><span class="badge M">M</span>Mega</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Palmon">Palmon<img alt="Palmon"></span></td><td>Nature Spirits</td><td>None</td><td><span class="badge R">R</span>Rookie</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Veggimon">Veggimon<img alt="Veggimon"></span></td><td>Nature Spirits</td><td>Recruit Palmon</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Numemon">Numemon<img alt="Numemon"></span></td><td>Nature Spirits</td><td>Recruit Palmon</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Lilamon">Lilamon<img alt="Lilamon"></span></td><td>Nature Spirits</td><td>Recruit Palmon and encounter with water-related digimon</td><td><span class="badge U">U</span>Ultimate</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Garurumon">Garurumon<img alt="Garurumon"></span></td><td>Virus Busters</td><td>None</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Yukidarumon">Yukidarumon<img alt="Yukidarumon"></span></td><td>Virus Busters</td><td>None</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Tyranomon">Tyranomon<img alt="Tyranomon"></span></td><td>Nature Spirits</td><td>20+ Sirloins in bag</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Meramon">Meramon<img alt="Meramon"></span></td><td>Nature Spirits</td><td>20+ Mushrooms in bag</td><td><span class="badge C">C</span>Champion</td></tr>
+      <tr><td>Recruit</td><td><span class="tooltip" data-digimon="Digitamamon">Digitamamon<img alt="Digitamamon"></span></td><td>Nightmare Soldiers</td><td>Find them two times in same adventure</td><td><span class="badge A">A</span>Any</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    document.querySelectorAll(".tooltip").forEach(el => {
+      const name = el.getAttribute("data-digimon");
+      const img = el.querySelector("img");
+      if (digimonImages[name]) {
+        img.src = digimonImages[name];
+      }
+    });
+  </script>
+</body>
+</html>
